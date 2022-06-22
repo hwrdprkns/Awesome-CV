@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Compile
-      run: make all
+      run: mkdir artifacts && make all
 
     - name: Upload PDFs to release
       uses: svenstaro/upload-release-action@v2
