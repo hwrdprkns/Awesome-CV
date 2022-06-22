@@ -16,10 +16,6 @@ jobs:
     - name: Compile
       run: make all
 
-    - uses: actions/upload-artifact@v3
-      with:
-        path: artifacts/*.pdf
-
     - name: Upload PDFs to release
       uses: svenstaro/upload-release-action@v2
       with:
