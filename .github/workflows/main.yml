@@ -23,3 +23,4 @@ jobs:
         file: artifacts/*.pdf
         tag: latest
         file_glob: true
+        overwrite: true
