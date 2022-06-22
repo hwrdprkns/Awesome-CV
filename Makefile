@@ -1,13 +1,11 @@
-.PHONY: examples
+.PHONY: clean resume.pdf
 
-CC = xelatex
+CC = xelatex -shell-escape
 RESUME_DIR = resume
 RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
 
-examples: $(foreach x, resume, $x.pdf)
-
 resume.pdf: taylor-perkins.tex $(RESUME_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+	$(CC) $<
 
 clean:
-	rm -rf *.pdf
+	rm -rf *.pdf *.log
