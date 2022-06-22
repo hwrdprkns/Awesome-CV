@@ -2,9 +2,6 @@
   <a href="https://github.com/hwrdprkns/Awesome-CV/actions/workflows/main.yml">
     <img alt="GitHub Actions" src="https://github.com/hwrdprkns/Awesome-CV/actions/workflows/main.yml/badge.svg" />
   </a>
-  <a href="https://github.com/hwrdprkns/Awesome-CV/releases/download/latest/taylor-perkins.pdf">
-    <img alt="Resume" src="https://img.shields.io/badge/resume-pdf-brightgreen.svg" />
-  </a>
 </div>
 
 <br />
