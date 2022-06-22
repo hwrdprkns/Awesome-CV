@@ -1,22 +1,17 @@
-.PHONY: examples
+.PHONY: clean resume.pdf coverletter.pdf
 
-CC = xelatex
-EXAMPLES_DIR = examples
-RESUME_DIR = examples/resume
-CV_DIR = examples/cv
+CC = xelatex -shell-escape
+RESUME_DIR = resume
 RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
-CV_SRCS = $(shell find $(CV_DIR) -name '*.tex')
+OUTPUT_DIR = artifacts
 
-examples: $(foreach x, coverletter cv resume, $x.pdf)
+all: clean coverletter.pdf resume.pdf
 
-resume.pdf: $(EXAMPLES_DIR)/resume.tex $(RESUME_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+resume.pdf: taylor-perkins.tex $(RESUME_SRCS)
+	$(CC) -output-dir=$(OUTPUT_DIR) $<
 
-cv.pdf: $(EXAMPLES_DIR)/cv.tex $(CV_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
-
-coverletter.pdf: $(EXAMPLES_DIR)/coverletter.tex
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+coverletter.pdf: cover-letter.tex $(RESUME_SRCS)
+	$(CC) -output-dir=$(OUTPUT_DIR) $<
 
 clean:
-	rm -rf $(EXAMPLES_DIR)/*.pdf
+	rm -rf *.pdf *.log
