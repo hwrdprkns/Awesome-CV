@@ -12,6 +12,9 @@
 *.dvi
 *-converted-to.*
 
+## Static Files
+artifacts/*
+
 ### Editor ###
 ## Vim & Emacs temp files:
 .*sw[op]
