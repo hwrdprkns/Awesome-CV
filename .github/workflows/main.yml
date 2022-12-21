@@ -10,8 +10,10 @@ jobs:
     container: texlive/texlive:latest
 
     steps:
-    - name: Checkout repo and compile
+    - name: Checkout repo
       uses: actions/checkout@v3
+
+    - name: Compile
       run: mkdir artifacts && make all
 
     - name: Upload PDFs to release
